@@ -1,6 +1,6 @@
 Name:		texlive-uplatex
 Version:	64072
-Release:	1
+Release:	2
 Summary:	pLaTeX2e and miscellaneous macros for upTeX
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/uplatex
