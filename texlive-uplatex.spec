@@ -3,7 +3,7 @@ Version:	64072
 Release:	2
 Summary:	pLaTeX2e and miscellaneous macros for upTeX
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/uplatex
+URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/uplatex
 License:	bsd3
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/uplatex.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/uplatex.doc.r%{version}.tar.xz
