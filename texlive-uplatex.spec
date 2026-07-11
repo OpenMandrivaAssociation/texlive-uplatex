@@ -1,46 +1,40 @@
-Name:		texlive-uplatex
-Version:	64072
-Release:	2
+%global tl_name uplatex
+%global tl_revision 77830
+
+Name:		texlive-%{tl_name}
+Version:	%{tl_revision}
+Release:	1
 Summary:	pLaTeX2e and miscellaneous macros for upTeX
 Group:		Publishing
-URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/uplatex
+URL:		https://www.ctan.org/tex-archive/macros/jptex/latex/uplatex
 License:	bsd3
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/uplatex.r%{version}.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/uplatex.doc.r%{version}.tar.xz
-Source2:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/uplatex.source.r%{version}.tar.xz
+Source0:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/uplatex.r%{tl_revision}.tar.xz
+Source1:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/uplatex.doc.r%{tl_revision}.tar.xz
+Source2:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/uplatex.source.r%{tl_revision}.tar.xz
 BuildArch:	noarch
-BuildRequires:	texlive-tlpkg
-Requires(pre):	texlive-tlpkg
-Requires(post):	texlive-kpathsea
+BuildSystem:	texlive
+Requires:	texlive(babel)
+Requires:	texlive(cm)
+Requires:	texlive(firstaid)
+Requires:	texlive(hyphen-base)
+Requires:	texlive(knuth-lib)
+Requires:	texlive(l3backend)
+Requires:	texlive(l3backend-dev)
+Requires:	texlive(l3kernel)
+Requires:	texlive(l3kernel-dev)
+Requires:	texlive(latex)
+Requires:	texlive(latex-base-dev)
+Requires:	texlive(latex-firstaid-dev)
+Requires:	texlive(latex-fonts)
+Requires:	texlive(platex)
+Requires:	texlive(tex-ini-files)
+Requires:	texlive(unicode-data)
+Requires:	texlive(uplatex.bin)
+Requires:	texlive(uptex)
+Requires:	texlive(uptex-fonts)
+Provides:	texlive(%{tl_name}) = %{tl_revision}
 
 %description
-The bundle provides pLaTeX2e macros for upTeX by Takuji Tanaka.
-This is a community edition syncing with platex. The bundle
-depends on platex.
+The bundle provides pLaTeX2e macros for upTeX by Takuji Tanaka. This is
+a community edition syncing with platex. The bundle depends on platex.
 
-%prep
-%setup -c -a1 -a2
-%autopatch -p1
-
-%build
-
-%install
-rm -rf tlpkg
-mkdir -p %{buildroot}%{_datadir}
-cp -a texmf-dist %{buildroot}%{_datadir}
-
-%files
-%doc %{_texmfdistdir}/texmf-dist/source/uplatex
-%{_texmfdistdir}/texmf-dist/tex/uplatex
-%doc %{_texmfdistdir}/texmf-dist/doc/uplatex
-%{_texmfdistdir}/texmf-dist
-%{_texmfdistdir}/texmf-dist/doc
-%doc %{_texmfdistdir}/texmf-dist/doc/man
-%doc %{_texmfdistdir}/texmf-dist/doc/man/man1
-%doc %{_texmfdistdir}/texmf-dist/doc/man/man1/uplatex.man1.pdf
-%doc %{_texmfdistdir}/texmf-dist/doc/man/man1/uplatex.1
-
-%post -p %{_sbindir}/texlive.post
-
-%postun
-[ "$1" -eq 0 ] && %{_sbindir}/texlive.post
