@@ -1,5 +1,6 @@
 %global tl_name uplatex
 %global tl_revision 77830
+%global tl_bin_links uplatex:euptex uplatex-dev:euptex
 
 Name:		texlive-%{tl_name}
 Version:	%{tl_revision}
@@ -33,6 +34,8 @@ Requires:	texlive(uplatex.bin)
 Requires:	texlive(uptex)
 Requires:	texlive(uptex-fonts)
 Provides:	texlive(%{tl_name}) = %{tl_revision}
+Provides:	texlive(%{tl_name}.bin) = %{tl_revision}
+Provides:	texlive-%{tl_name}.bin = %{EVRD}
 
 %description
 The bundle provides pLaTeX2e macros for upTeX by Takuji Tanaka. This is
