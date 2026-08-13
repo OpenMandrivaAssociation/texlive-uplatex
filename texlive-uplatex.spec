@@ -1,5 +1,5 @@
 %global tl_name uplatex
-%global tl_revision 77830
+%global tl_revision 79947
 %global tl_bin_links uplatex:euptex uplatex-dev:euptex
 
 Name:		texlive-%{tl_name}
@@ -20,7 +20,6 @@ Requires:	texlive(firstaid)
 Requires:	texlive(hyphen-base)
 Requires:	texlive(knuth-lib)
 Requires:	texlive(l3backend)
-Requires:	texlive(l3backend-dev)
 Requires:	texlive(l3kernel)
 Requires:	texlive(l3kernel-dev)
 Requires:	texlive(latex)
@@ -33,8 +32,8 @@ Requires:	texlive(unicode-data)
 Requires:	texlive(uplatex.bin)
 Requires:	texlive(uptex)
 Requires:	texlive(uptex-fonts)
-Provides:	texlive(%{tl_name}) = %{tl_revision}
-Provides:	texlive(%{tl_name}.bin) = %{tl_revision}
+Provides:	texlive(%{tl_name}) = %{version}
+Provides:	texlive(%{tl_name}.bin) = %{version}
 Provides:	texlive-%{tl_name}.bin = %{EVRD}
 
 %description
